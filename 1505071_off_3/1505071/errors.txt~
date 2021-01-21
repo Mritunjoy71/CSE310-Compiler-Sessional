@@ -1,0 +1,16 @@
+Error at line 6: Multiple Declaration of c
+
+Error at line 7 : a Non-integer Array Index 
+
+error at line 8 : Assigning float value to integer
+
+Error at line 9 : Unsuported operand for mod operator
+
+Error at line 10 : e doesn't exist
+Type mismatch
+
+Error at line 11 : a doesn't exist
+Error at line 12 : b doesn't exist
+Type mismatch
+
+Total Errors : 7

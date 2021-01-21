@@ -1,0 +1,659 @@
+Line 1 : type_specifier	: INT
+
+int 
+Line 1 : type_specifier	: INT
+
+int 
+Line 1 : parameter_list  : type_specifier ID
+int a
+New ScopeTable with id 2 is created
+Line 2 : variable : ID
+a
+Line 2: factor	: CONST_INT:
+
+9
+Line 2 unary_expression : factor:
+
+9
+Line 2 : term : unary_expression
+
+9
+Line 2 : simple_expression : term
+
+9
+Line 2 : rel_expression : simple_expression
+
+9
+Line 2 : logic_expression : rel_expression
+
+9
+Line 2 : expression : variable ASSIGNOP logic_expression
+
+a=9
+Line 2 : expression_statement : expression SEMICOLON
+
+a=9;
+Line 2 : statement : expression_statement
+
+a=9;
+Line 2 : statements : statement
+
+a=9;
+
+Line 3: factor	: CONST_INT:
+
+2
+Line 3 unary_expression : factor:
+
+2
+Line 3 : term : unary_expression
+
+2
+Line 3 : variable : ID
+a
+Line 3 factor	: variable :
+
+a
+Line 3 unary_expression : factor:
+
+a
+Line 3 : term : term MULOP unary_expression
+
+2*a
+Line 3 : simple_expression : term
+
+2*a
+Line 3 : rel_expression : simple_expression
+
+2*a
+Line 3 : logic_expression : rel_expression
+
+2*a
+Line 3 : expression : logic_expression
+
+2*a
+Line 3 : statement : RETURN expression SEMICOLON
+
+return 2*a;
+Line 3 : statements : statements statement
+
+a=9;
+
+return 2*a;
+
+ScopeTable #2
+6 --><a : ID>	
+ScopeTable #1
+Line 4 : compound_statement : LCURL statements RCURL
+
+{
+a=9;
+
+return 2*a;
+}
+Line 4 : func_definition : type_specifier ID LPAREN parameter_list RPAREN compound_statement
+int f (int a) 
+{
+a=9;
+
+return 2*a;
+}
+Line 4 : unit : func_definition
+
+int f (int a) 
+{
+a=9;
+
+return 2*a;
+}
+Line 4 : program : unit
+
+int f (int a) 
+{
+a=9;
+
+return 2*a;
+}
+Line 6 : type_specifier	: INT
+
+int 
+Line 6 : type_specifier	: INT
+
+int 
+Line 6 : parameter_list  : type_specifier ID
+int a
+Line 6 : type_specifier	: INT
+
+int 
+Line 6 : parameter_list  : parameter_list COMMA type_specifier ID
+int a,int b
+New ScopeTable with id 3 is created
+Line 7 : type_specifier	: INT
+
+int 
+Line 7 : declaration_list :	ID
+x
+Line 7 : var_declaration : type_specifier declaration_list SEMICOLON
+
+int x;
+Line 7 : statement : var_declaration
+
+int x;
+Line 7 : statements : statement
+
+int x;
+
+Line 8 : variable : ID
+x
+Line 8 : variable : ID
+a
+Line 8 factor	: variable :
+
+a
+Line 8 unary_expression : factor:
+
+a
+Line 8 : term : unary_expression
+
+a
+Line 8 : simple_expression : term
+
+a
+Line 8 : rel_expression : simple_expression
+
+a
+Line 8 : logic_expression : rel_expression
+
+a
+Line 8:arguments :logic_expression :
+
+a
+Line 8: argument_list : arguments:
+
+a
+Line 8 factor	: ID LPAREN argument_list RPAREN:
+
+t1(a)
+Line 8 unary_expression : factor:
+
+t1(a)
+Line 8 : term : unary_expression
+
+t1(a)
+Line 8 : simple_expression : term
+
+t1(a)
+Line 8 : variable : ID
+a
+Line 8 factor	: variable :
+
+a
+Line 8 unary_expression : factor:
+
+a
+Line 8 : term : unary_expression
+
+a
+Line 8 : simple_expression : simple_expression ADDOP term
+
+t1(a)+a
+Line 8 : variable : ID
+b
+Line 8 factor	: variable :
+
+b
+Line 8 unary_expression : factor:
+
+b
+Line 8 : term : unary_expression
+
+b
+Line 8 : simple_expression : simple_expression ADDOP term
+
+t1(a)+a+b
+Line 8 : rel_expression : simple_expression
+
+t1(a)+a+b
+Line 8 : logic_expression : rel_expression
+
+t1(a)+a+b
+Line 8 : expression : variable ASSIGNOP logic_expression
+
+x=t1(a)+a+b
+Line 8 : expression_statement : expression SEMICOLON
+
+x=t1(a)+a+b;
+Line 8 : statement : expression_statement
+
+x=t1(a)+a+b;
+Line 8 : statements : statements statement
+
+int x;
+
+x=t1(a)+a+b;
+
+Line 9 : variable : ID
+x
+Line 9 factor	: variable :
+
+x
+Line 9 unary_expression : factor:
+
+x
+Line 9 : term : unary_expression
+
+x
+Line 9 : simple_expression : term
+
+x
+Line 9 : rel_expression : simple_expression
+
+x
+Line 9 : logic_expression : rel_expression
+
+x
+Line 9 : expression : logic_expression
+
+x
+Line 9 : statement : RETURN expression SEMICOLON
+
+return x;
+Line 9 : statements : statements statement
+
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+
+ScopeTable #3
+3 --><x : ID>	
+6 --><a : ID>	
+7 --><b : ID>	
+ScopeTable #1
+11 --><f : ID>	
+Line 10 : compound_statement : LCURL statements RCURL
+
+{
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+}
+Line 10 : func_definition : type_specifier ID LPAREN parameter_list RPAREN compound_statement
+int g (int a,int b) 
+{
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+}
+Line 10 : unit : func_definition
+
+int g (int a,int b) 
+{
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+}
+Line 10 : program : program unit
+
+int f (int a) 
+{
+a=9;
+
+return 2*a;
+}
+int g (int a,int b) 
+{
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+}
+Line 12 : type_specifier	: INT
+
+int 
+New ScopeTable with id 4 is created
+Line 13 : type_specifier	: INT
+
+int 
+Line 13 : declaration_list :	ID
+a
+Line 13 : declaration_list : 	declaration_list COMMA ID
+a,b
+Line 13 : var_declaration : type_specifier declaration_list SEMICOLON
+
+int a,b;
+Line 13 : statement : var_declaration
+
+int a,b;
+Line 13 : statements : statement
+
+int a,b;
+
+Line 14 : variable : ID
+a
+Line 14: factor	: CONST_INT:
+
+1
+Line 14 unary_expression : factor:
+
+1
+Line 14 : term : unary_expression
+
+1
+Line 14 : simple_expression : term
+
+1
+Line 14 : rel_expression : simple_expression
+
+1
+Line 14 : logic_expression : rel_expression
+
+1
+Line 14 : expression : variable ASSIGNOP logic_expression
+
+a=1
+Line 14 : expression_statement : expression SEMICOLON
+
+a=1;
+Line 14 : statement : expression_statement
+
+a=1;
+Line 14 : statements : statements statement
+
+int a,b;
+
+a=1;
+
+Line 15 : variable : ID
+b
+Line 15: factor	: CONST_INT:
+
+2
+Line 15 unary_expression : factor:
+
+2
+Line 15 : term : unary_expression
+
+2
+Line 15 : simple_expression : term
+
+2
+Line 15 : rel_expression : simple_expression
+
+2
+Line 15 : logic_expression : rel_expression
+
+2
+Line 15 : expression : variable ASSIGNOP logic_expression
+
+b=2
+Line 15 : expression_statement : expression SEMICOLON
+
+b=2;
+Line 15 : statement : expression_statement
+
+b=2;
+Line 15 : statements : statements statement
+
+int a,b;
+
+a=1;
+
+b=2;
+
+Line 16 : variable : ID
+a
+Line 16 : variable : ID
+a
+Line 16 factor	: variable :
+
+a
+Line 16 unary_expression : factor:
+
+a
+Line 16 : term : unary_expression
+
+a
+Line 16 : simple_expression : term
+
+a
+Line 16 : rel_expression : simple_expression
+
+a
+Line 16 : logic_expression : rel_expression
+
+a
+Line 16:arguments :logic_expression :
+
+a
+Line 16 : variable : ID
+b
+Line 16 factor	: variable :
+
+b
+Line 16 unary_expression : factor:
+
+b
+Line 16 : term : unary_expression
+
+b
+Line 16 : simple_expression : term
+
+b
+Line 16 : rel_expression : simple_expression
+
+b
+Line 16 : logic_expression : rel_expression
+
+b
+Line 16: arguments : arguments COMMA logic_expression :
+
+a,b
+Line 16: argument_list : arguments:
+
+a,b
+Line 16 factor	: ID LPAREN argument_list RPAREN:
+
+t0(a,b)
+Line 16 unary_expression : factor:
+
+t0(a,b)
+Line 16 : term : unary_expression
+
+t0(a,b)
+Line 16 : simple_expression : term
+
+t0(a,b)
+Line 16 : rel_expression : simple_expression
+
+t0(a,b)
+Line 16 : logic_expression : rel_expression
+
+t0(a,b)
+Line 16 : expression : variable ASSIGNOP logic_expression
+
+a=t0(a,b)
+Line 16 : expression_statement : expression SEMICOLON
+
+a=t0(a,b);
+Line 16 : statement : expression_statement
+
+a=t0(a,b);
+Line 16 : statements : statements statement
+
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+Line 17 : statement : PRINTLN LPAREN ID RPAREN SEMICOLON
+
+println( );
+Line 17 : statements : statements statement
+
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+Line 18: factor	: CONST_INT:
+
+0
+Line 18 unary_expression : factor:
+
+0
+Line 18 : term : unary_expression
+
+0
+Line 18 : simple_expression : term
+
+0
+Line 18 : rel_expression : simple_expression
+
+0
+Line 18 : logic_expression : rel_expression
+
+0
+Line 18 : expression : logic_expression
+
+0
+Line 18 : statement : RETURN expression SEMICOLON
+
+return 0;
+Line 18 : statements : statements statement
+
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+return 0;
+
+ScopeTable #4
+6 --><a : ID>	
+7 --><b : ID>	
+ScopeTable #1
+11 --><f : ID>	
+12 --><g : ID>	
+Line 19 : compound_statement : LCURL statements RCURL
+
+{
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+return 0;
+}
+Line 19 : func_definition : type_specifier ID LPAREN RPAREN compound_statement
+int main () 
+{
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+return 0;
+}
+Line 19 : unit : func_definition
+
+int main () 
+{
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+return 0;
+}
+Line 19 : program : program unit
+
+int f (int a) 
+{
+a=9;
+
+return 2*a;
+}
+int g (int a,int b) 
+{
+int x;
+
+x=t1(a)+a+b;
+
+return x;
+}
+int main () 
+{
+int a,b;
+
+a=1;
+
+b=2;
+
+a=t0(a,b);
+
+println( );
+
+return 0;
+}
+Line 20 : start : program
+
+int f(int a){
+    a=9;
+    return 2*a;
+}
+
+int g(int a, int b){
+    int x;
+    x=f(a)+a+b;
+    return x;
+}
+
+int main(){
+    int a,b;
+    a=1;
+    b=2;
+    a=g(a,b);
+    println(a);
+    return 0;
+}
+
+Total Lines : 20
+
+Total Errors : 0

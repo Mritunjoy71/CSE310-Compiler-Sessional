@@ -1,0 +1,23 @@
+Line no 1: TOKEN <STRING> Lexeme "abc" found
+
+Line no 2: TOKEN <STRING> Lexeme "abc  \t \t def" found
+
+Error at line 2: unterminated string "
+
+Line no 3: TOKEN <STRING> Lexeme "abc  \t \t def" found
+
+Error at line 3: unterminated string "
+
+Error at line 4: unterminated string "abc
+
+
+Line no 5: TOKEN <STRING> Lexeme "" found
+
+Line no 6: TOKEN <STRING> Lexeme "aditya \
+chakma" found
+
+Line no 8: TOKEN <STRING> Lexeme "aditya \
+chakma" found
+
+Total lines:9
+Total errors:3

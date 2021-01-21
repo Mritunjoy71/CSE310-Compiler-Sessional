@@ -1,0 +1,6 @@
+Error at line 5 : a doesn't exist
+Type mismatch
+
+Error at line 6 : a doesn't exist
+Error at line 7 : b doesn't exist
+Total Errors : 3

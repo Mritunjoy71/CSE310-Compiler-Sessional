@@ -1,0 +1,10 @@
+Warning at line 8 : Assigning float value to integer
+
+Error at line 9 : Unsuported operand for mod operator
+
+Error at line 10 : a doesn't exist
+
+Error at line 11 : a doesn't exist
+
+Error at line 12 : b doesn't exist
+

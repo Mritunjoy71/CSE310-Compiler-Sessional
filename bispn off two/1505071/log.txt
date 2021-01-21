@@ -1,0 +1,43 @@
+Line 1 : type_specifier	: INT
+
+int
+
+Line 1 : declaration_list :	ID
+x
+
+Line 1 : declaration_list : 	declaration_list COMMA ID
+y
+
+Line 1 : declaration_list : 	declaration_list COMMA ID
+z
+
+Line 1 : var_declaration : type_specifier declaration_list SEMICOLON
+
+Line 1 : unit : var_declaration
+
+int x,y,z;
+Line 1 : program : unit
+
+int x,y,z;
+Line 2 : type_specifier	: INT
+
+int
+
+Line 2 : declaration_list :	ID
+x
+
+Line 2 : var_declaration : type_specifier declaration_list SEMICOLON
+
+Line 2 : unit : var_declaration
+
+int x,y,z; 
+int x;
+Line 2 : program : program unit
+
+int x,y,z; 
+int x;
+Line 3 : start : program
+
+Total Lines : 3
+
+Total Errors : 0
